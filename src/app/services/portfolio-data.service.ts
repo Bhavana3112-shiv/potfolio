@@ -30,9 +30,9 @@ export class PortfolioDataService {
   ];
 
   readonly socialLinks: SocialLink[] = [
-    { label: 'GitHub', href: 'https://github.com/yourusername', icon: 'github' },
-    { label: 'LinkedIn', href: 'https://linkedin.com/in/yourusername', icon: 'linkedin' },
-    { label: 'Email', href: 'mailto:your.email@example.com', icon: 'mail' },
+    { label: 'GitHub', href: 'https://github.com/Bhavana3112-shiv/potfolio', icon: 'github' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/bhavana-m-a37373123', icon: 'linkedin' },
+    { label: 'Email', href: 'mailto:bhavanaks3125@gmail.com', icon: 'mail' },
   ];
 
   readonly heroTechFlow: string[] = ['Angular', 'Node.js', 'MongoDB', 'AWS', 'AI'];
