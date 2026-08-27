@@ -2,27 +2,34 @@
   <nav class="navbar__inner">
     <a href="#home" class="navbar__brand" (click)="closeMenu()">
       <span class="navbar__brand-mark">{{ '<' }}/{{ '>' }}</span>
-      <span class="navbar__brand-name">Bhavana</span>
+      <span class="navbar__brand-name">{{ data.name }}</span>
     </a>
 
     <ul class="navbar__links">
       @for (item of data.navItems; track item.anchor) {
         <li>
-          <a [href]="'#' + item.anchor">{{ item.label }}</a>
+          <a [href]="'#' + item.anchor" (click)="closeMenu()">{{ item.label }}</a>
         </li>
       }
     </ul>
 
     <div class="navbar__cta">
-      <a class="btn btn-outline btn-sm" [href]="'#contact'">Contact</a>
+      <a class="btn btn-outline btn-sm" [href]="'#contact'" (click)="closeMenu()">Contact</a>
     </div>
 
-    <button class="navbar__toggle" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen" aria-label="Toggle navigation menu">
+    <button
+      class="navbar__toggle"
+      type="button"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="isMenuOpen"
+      aria-controls="mobile-navigation"
+      aria-label="Toggle navigation menu"
+    >
       <app-icon [name]="isMenuOpen ? 'x' : 'menu'" [size]="22"></app-icon>
     </button>
   </nav>
 
-  <div class="navbar__mobile" [class.navbar__mobile--open]="isMenuOpen">
+  <div id="mobile-navigation" class="navbar__mobile" [class.navbar__mobile--open]="isMenuOpen">
     <ul>
       @for (item of data.navItems; track item.anchor) {
         <li>

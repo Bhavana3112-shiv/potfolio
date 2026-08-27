@@ -16,7 +16,7 @@ import {
 
 @Injectable({ providedIn: 'root' })
 export class PortfolioDataService {
-  readonly name = 'Your Name';
+  readonly name = 'Bhavana';
   readonly role = 'Lead Full-Stack Engineer';
 
   readonly navItems: NavItem[] = [
