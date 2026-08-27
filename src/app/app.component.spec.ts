@@ -18,6 +18,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Lead Full-Stack Engineer');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Full-Stack(MEAN stack) Engineer');
   });
 });

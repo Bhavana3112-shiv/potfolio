@@ -17,7 +17,7 @@ import {
 @Injectable({ providedIn: 'root' })
 export class PortfolioDataService {
   readonly name = 'Bhavana';
-  readonly role = 'Lead Full-Stack Engineer';
+  readonly role = 'Full-Stack(MEAN stack) Engineer';
 
   readonly navItems: NavItem[] = [
     { label: 'Home', anchor: 'home' },
@@ -149,7 +149,7 @@ export class PortfolioDataService {
 
   readonly experience: ExperienceItem[] = [
     {
-      role: 'Lead Full-Stack Engineer',
+      role: 'Full-Stack(MEAN stack) Engineer',
       company: 'Company Name',
       duration: 'Start Date – Present',
       responsibilities: [
