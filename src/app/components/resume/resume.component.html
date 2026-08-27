@@ -1,0 +1,14 @@
+<section class="section resume">
+  <div class="resume__card glass-card" appReveal>
+    <h2>Want to know more about my experience?</h2>
+    <p>Download my resume for a full breakdown of roles, responsibilities and technical scope.</p>
+    <div class="resume__actions">
+      <a [href]="data.resumeUrl" download class="btn btn-primary">
+        Download Resume <app-icon name="download" [size]="17"></app-icon>
+      </a>
+      <a [href]="data.resumeUrl" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+        View Resume <app-icon name="external-link" [size]="17"></app-icon>
+      </a>
+    </div>
+  </div>
+</section>

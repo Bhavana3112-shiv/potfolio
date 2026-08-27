@@ -1,0 +1,37 @@
+<section id="about" class="section about">
+  <div class="about__grid">
+    <div class="about__text" appReveal>
+      <span class="section-tag">About</span>
+      <h2 class="section-heading">Engineering with a Product Mindset</h2>
+      <p class="about__desc">
+        I'm a full-stack engineer experienced in designing and developing scalable applications, REST APIs,
+        cloud-based systems, mobile applications and AI-powered workflows. I care as much about how a system
+        is architected and secured as I do about how it feels to use.
+      </p>
+
+      <ul class="about__highlights">
+        @for (item of data.aboutHighlights; track item.label) {
+          <li>
+            <app-icon [name]="item.icon" [size]="16"></app-icon>
+            <span>{{ item.label }}</span>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <div class="about__stats">
+      @for (stat of data.aboutStats; track stat.label; let i = $index) {
+        <div class="about__stat glass-card" appReveal="" [class]="'reveal-delay-' + (i + 1)">
+          @if (stat.isCounter && stat.numericTarget) {
+            <div class="about__stat-value">
+              <span [appCountUp]="stat.numericTarget" [countSuffix]="stat.suffix || ''">0</span>
+            </div>
+          } @else {
+            <div class="about__stat-value about__stat-value--text">{{ stat.value }}</div>
+          }
+          <div class="about__stat-label">{{ stat.label }}</div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

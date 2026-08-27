@@ -1,0 +1,18 @@
+<section id="expertise" class="section expertise">
+  <div appReveal class="expertise__intro">
+    <span class="section-tag">Technical Expertise</span>
+    <h2 class="section-heading">Depth Across the Full Stack</h2>
+  </div>
+
+  <div class="expertise__grid">
+    @for (card of data.expertiseCards; track card.title; let i = $index) {
+      <div class="expertise__card glass-card" appReveal [class]="'reveal-delay-' + ((i % 4) + 1)">
+        <div class="expertise__icon">
+          <app-icon [name]="card.icon" [size]="22"></app-icon>
+        </div>
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.description }}</p>
+      </div>
+    }
+  </div>
+</section>

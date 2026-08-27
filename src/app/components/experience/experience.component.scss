@@ -1,0 +1,123 @@
+.experience__intro {
+  margin-bottom: 48px;
+}
+
+.experience__timeline {
+  position: relative;
+  padding-left: 32px;
+  border-left: 1.5px solid var(--border-glass-strong);
+}
+
+.experience__item {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.experience__item:last-child {
+  margin-bottom: 0;
+}
+
+.experience__marker {
+  position: absolute;
+  left: -38.5px;
+  top: 28px;
+}
+
+.experience__dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  display: block;
+  background: var(--bg-base);
+  border: 2.5px solid var(--secondary);
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.5);
+}
+
+.experience__card {
+  padding: 30px;
+}
+
+.experience__card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.experience__role {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.experience__company {
+  color: var(--secondary);
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+.experience__duration {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  padding: 6px 12px;
+  border: 1px solid var(--border-glass-strong);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.experience__block {
+  margin-bottom: 20px;
+}
+
+.experience__block h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  font-family: var(--font-mono);
+}
+
+.experience__block ul {
+  display: grid;
+  gap: 10px;
+}
+
+.experience__block li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+}
+
+.experience__block app-icon {
+  color: var(--secondary);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.experience__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 600px) {
+  .experience__timeline {
+    padding-left: 22px;
+  }
+
+  .experience__marker {
+    left: -28.5px;
+  }
+
+  .experience__card {
+    padding: 22px;
+  }
+}

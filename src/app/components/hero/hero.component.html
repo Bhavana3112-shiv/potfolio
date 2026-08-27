@@ -1,0 +1,68 @@
+<section id="home" class="hero">
+  <div class="hero__inner">
+    <div class="hero__content">
+      <div class="hero__eyebrow hero__fade hero__fade-1">
+        <span class="dot"></span> Available for opportunities
+      </div>
+
+      <h1 class="hero__title hero__fade hero__fade-2">
+        {{ data.role }}
+      </h1>
+
+      <p class="hero__lead hero__fade hero__fade-3">
+        Building scalable web and mobile applications with Angular, Node.js, MongoDB, AWS and AI.
+      </p>
+
+      <p class="hero__desc hero__fade hero__fade-3">
+        Full-stack engineer focused on building reliable, scalable and user-friendly applications across web, mobile and cloud environments.
+      </p>
+
+      <div class="hero__cta hero__fade hero__fade-4">
+        <a href="#projects" class="btn btn-primary">
+          View My Work <app-icon name="arrow-right" [size]="17"></app-icon>
+        </a>
+        <a [href]="data.resumeUrl" download class="btn btn-outline">
+          Download Resume <app-icon name="download" [size]="17"></app-icon>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Contact Me</a>
+      </div>
+
+      <div class="hero__socials hero__fade hero__fade-4">
+        @for (link of data.socialLinks; track link.href) {
+          <a [href]="link.href" [attr.aria-label]="link.label" target="_blank" rel="noopener noreferrer" class="hero__social-link">
+            <app-icon [name]="link.icon" [size]="18"></app-icon>
+          </a>
+        }
+      </div>
+    </div>
+
+    <div class="hero__visual hero__fade hero__fade-3">
+      <div class="hero__panel glass-card">
+        <div class="hero__panel-header">
+          <span class="hero__panel-dot"></span>
+          <span class="hero__panel-dot"></span>
+          <span class="hero__panel-dot"></span>
+          <span class="hero__panel-title">system.architecture</span>
+        </div>
+        <div class="hero__flow">
+          @for (tech of data.heroTechFlow; track tech; let last = $last; let i = $index) {
+            <div class="hero__flow-node" [style.--i]="i">
+              <span>{{ tech }}</span>
+            </div>
+            @if (!last) {
+              <div class="hero__flow-connector" [style.--i]="i"></div>
+            }
+          }
+        </div>
+        <div class="hero__panel-footer">
+          <span class="badge">Production-Ready</span>
+          <span class="badge">Cloud-Native</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#about" class="hero__scroll-cue" aria-label="Scroll to About section">
+    <app-icon name="chevron-down" [size]="20"></app-icon>
+  </a>
+</section>

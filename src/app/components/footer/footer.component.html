@@ -1,0 +1,25 @@
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <div class="footer__name">{{ data.name }}</div>
+      <div class="footer__role">{{ data.role }}</div>
+    </div>
+
+    <div class="footer__links">
+      @for (link of data.socialLinks; track link.href) {
+        <a [href]="link.href" target="_blank" rel="noopener noreferrer">
+          <app-icon [name]="link.icon" [size]="16"></app-icon>
+          {{ link.label }}
+        </a>
+      }
+      <a [href]="data.resumeUrl" download>
+        <app-icon name="download" [size]="16"></app-icon>
+        Resume
+      </a>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    © {{ year }} {{ data.name }}. All rights reserved.
+  </div>
+</footer>

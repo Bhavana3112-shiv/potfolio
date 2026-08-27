@@ -1,0 +1,24 @@
+<section class="section process">
+  <div appReveal class="process__intro">
+    <span class="section-tag">Engineering Process</span>
+    <h2 class="section-heading">From Problem → Production</h2>
+    <p class="section-subtext">Every system I build follows a disciplined path from problem to production.</p>
+  </div>
+
+  <div class="process__steps">
+    @for (step of data.processSteps; track step.label; let last = $last; let i = $index) {
+      <div class="process__step" appReveal [class]="'reveal-delay-' + ((i % 4) + 1)">
+        <div class="process__icon">
+          <app-icon [name]="step.icon" [size]="20"></app-icon>
+        </div>
+        <h4>{{ step.label }}</h4>
+        <p>{{ step.description }}</p>
+      </div>
+      @if (!last) {
+        <div class="process__arrow">
+          <app-icon name="arrow-right" [size]="16"></app-icon>
+        </div>
+      }
+    }
+  </div>
+</section>

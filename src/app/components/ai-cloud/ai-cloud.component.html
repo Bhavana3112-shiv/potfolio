@@ -1,0 +1,30 @@
+<section class="section ai-cloud">
+  <div appReveal class="ai-cloud__intro">
+    <span class="section-tag">AI + Cloud + Engineering</span>
+    <h2 class="section-heading">Intelligent Systems, Built on Solid Infrastructure</h2>
+    <p class="section-subtext">
+      LLMs like Gemini and Claude become production-grade when paired with reliable cloud infrastructure,
+      durable storage and well-designed data layers.
+    </p>
+  </div>
+
+  <div class="ai-cloud__orbit" appReveal>
+    <div class="ai-cloud__hub">AI + Cloud<br />+ Engineering</div>
+
+    @for (node of data.aiCloudNodes; track node.label; let i = $index) {
+      <div class="ai-cloud__spoke" [style.--angle]="angleFor(i)">
+        <span class="ai-cloud__connector"></span>
+        <div class="ai-cloud__node ai-cloud__node--{{ node.group }}">
+          {{ node.label }}
+        </div>
+      </div>
+    }
+  </div>
+
+  <div class="ai-cloud__legend">
+    <span><i class="ai-cloud__dot ai-cloud__dot--ai"></i>AI</span>
+    <span><i class="ai-cloud__dot ai-cloud__dot--cloud"></i>Cloud</span>
+    <span><i class="ai-cloud__dot ai-cloud__dot--data"></i>Data</span>
+    <span><i class="ai-cloud__dot ai-cloud__dot--app"></i>Application</span>
+  </div>
+</section>

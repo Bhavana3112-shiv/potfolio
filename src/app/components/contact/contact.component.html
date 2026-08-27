@@ -1,0 +1,54 @@
+<section id="contact" class="section contact">
+  <div class="contact__grid">
+    <div appReveal class="contact__info">
+      <span class="section-tag">Contact</span>
+      <h2 class="section-heading">Let's Build Something Great</h2>
+      <p class="section-subtext">
+        Have an interesting project, product idea or engineering challenge? Let's talk.
+      </p>
+
+      <div class="contact__channels">
+        @for (link of data.socialLinks; track link.href) {
+          <a [href]="link.href" target="_blank" rel="noopener noreferrer" class="contact__channel">
+            <span class="contact__channel-icon"><app-icon [name]="link.icon" [size]="18"></app-icon></span>
+            <span>{{ link.label }}</span>
+          </a>
+        }
+      </div>
+    </div>
+
+    <form class="contact__form glass-card" appReveal="reveal-delay-2" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="contact__field">
+        <label for="name">Name</label>
+        <input id="name" type="text" formControlName="name" placeholder="Your name" />
+        @if (form.get('name')?.invalid && form.get('name')?.touched) {
+          <span class="contact__error">Please enter your name.</span>
+        }
+      </div>
+
+      <div class="contact__field">
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" placeholder="you@example.com" />
+        @if (form.get('email')?.invalid && form.get('email')?.touched) {
+          <span class="contact__error">Please enter a valid email.</span>
+        }
+      </div>
+
+      <div class="contact__field">
+        <label for="message">Message</label>
+        <textarea id="message" rows="5" formControlName="message" placeholder="Tell me about your project or idea"></textarea>
+        @if (form.get('message')?.invalid && form.get('message')?.touched) {
+          <span class="contact__error">Message should be at least 10 characters.</span>
+        }
+      </div>
+
+      <button type="submit" class="btn btn-primary contact__submit">
+        Send Message <app-icon name="arrow-right" [size]="16"></app-icon>
+      </button>
+
+      @if (submitted()) {
+        <p class="contact__success">Your email client should now be open with your message ready to send.</p>
+      }
+    </form>
+  </div>
+</section>

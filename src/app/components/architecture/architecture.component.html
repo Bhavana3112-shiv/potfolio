@@ -1,0 +1,50 @@
+<section id="architecture" class="section architecture">
+  <div appReveal class="architecture__intro">
+    <span class="section-tag">Architecture</span>
+    <h2 class="section-heading">How I Build Systems</h2>
+    <p class="section-subtext">
+      A layered, cloud-native architecture — hover any layer to see what it does.
+    </p>
+  </div>
+
+  <div class="architecture__diagram" appReveal>
+    <div class="architecture__grid" #grid>
+      <svg class="architecture__lines" [attr.viewBox]="'0 0 ' + viewBoxWidth + ' ' + viewBoxHeight" preserveAspectRatio="none">
+        @for (line of lines; track line.key) {
+          <line
+            [attr.x1]="line.x1" [attr.y1]="line.y1"
+            [attr.x2]="line.x2" [attr.y2]="line.y2"
+            class="architecture__line"
+          />
+        }
+      </svg>
+
+      @for (node of data.architectureNodes; track node.id) {
+        <div
+          #nodeEl
+          [attr.data-node-id]="node.id"
+          class="architecture__node"
+          [class.architecture__node--active]="activeNode?.id === node.id"
+          [style.grid-column]="node.column + 1"
+          [style.grid-row]="node.row + 1"
+          (mouseenter)="setActive(node)"
+          (mouseleave)="setActive(null)"
+          (click)="setActive(node)"
+          tabindex="0"
+        >
+          {{ node.label }}
+        </div>
+      }
+    </div>
+
+    <div class="architecture__detail glass-card">
+      @if (activeNode) {
+        <h4>{{ activeNode.label }}</h4>
+        <p>{{ activeNode.description }}</p>
+      } @else {
+        <h4>Hover a layer</h4>
+        <p>Explore the architecture — hover or tap any component to see how it fits into the system.</p>
+      }
+    </div>
+  </div>
+</section>

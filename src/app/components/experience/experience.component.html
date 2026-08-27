@@ -1,0 +1,51 @@
+<section id="experience" class="section experience">
+  <div appReveal class="experience__intro">
+    <span class="section-tag">Experience</span>
+    <h2 class="section-heading">Where I've Built Systems</h2>
+    <p class="section-subtext">A track record of shipping production applications end-to-end.</p>
+  </div>
+
+  <div class="experience__timeline">
+    @for (item of data.experience; track item.company; let i = $index) {
+      <div class="experience__item" appReveal [class]="'reveal-delay-' + (i + 1)">
+        <div class="experience__marker">
+          <span class="experience__dot"></span>
+        </div>
+
+        <div class="experience__card glass-card">
+          <div class="experience__card-head">
+            <div>
+              <h3 class="experience__role">{{ item.role }}</h3>
+              <div class="experience__company">{{ item.company }}</div>
+            </div>
+            <span class="experience__duration">{{ item.duration }}</span>
+          </div>
+
+          <div class="experience__block">
+            <h4>Responsibilities</h4>
+            <ul>
+              @for (r of item.responsibilities; track r) {
+                <li><app-icon name="check-circle" [size]="14"></app-icon>{{ r }}</li>
+              }
+            </ul>
+          </div>
+
+          <div class="experience__block">
+            <h4>Key Achievements</h4>
+            <ul>
+              @for (a of item.achievements; track a) {
+                <li><app-icon name="zap" [size]="14"></app-icon>{{ a }}</li>
+              }
+            </ul>
+          </div>
+
+          <div class="experience__tech">
+            @for (tech of item.technologies; track tech) {
+              <span class="badge">{{ tech }}</span>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</section>

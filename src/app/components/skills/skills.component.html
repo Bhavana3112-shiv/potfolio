@@ -1,0 +1,32 @@
+<section id="skills" class="section skills">
+  <div appReveal class="skills__intro">
+    <span class="section-tag">Skills</span>
+    <h2 class="section-heading">A Technology Stack Built for Production</h2>
+    <p class="section-subtext">
+      Grouped by domain — from interactive frontends to cloud infrastructure and AI-powered workflows.
+    </p>
+  </div>
+
+  <div class="skills__tabs" appReveal>
+    @for (category of data.skillCategories; track category.key) {
+      <button
+        class="skills__tab"
+        [class.skills__tab--active]="isActive(category)"
+        (click)="setActive(category)"
+        type="button"
+      >
+        <app-icon [name]="category.icon" [size]="16"></app-icon>
+        {{ category.title }}
+      </button>
+    }
+  </div>
+
+  <div class="skills__grid" appReveal>
+    @for (skill of activeSkills.skills; track skill.name; let i = $index) {
+      <div class="skills__card" [style.--i]="i">
+        <span class="skills__card-mark">{{ initials(skill.name) }}</span>
+        <span class="skills__card-name">{{ skill.name }}</span>
+      </div>
+    }
+  </div>
+</section>

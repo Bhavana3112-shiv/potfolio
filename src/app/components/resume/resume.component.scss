@@ -1,0 +1,26 @@
+.resume__card {
+  padding: 56px 40px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.14), transparent 55%),
+    radial-gradient(circle at 70% 80%, rgba(168, 85, 247, 0.12), transparent 55%),
+    var(--bg-glass);
+}
+
+.resume__card h2 {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.resume__card p {
+  max-width: 480px;
+  margin: 0 auto 30px;
+}
+
+.resume__actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
